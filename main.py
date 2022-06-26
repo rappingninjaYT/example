@@ -18,7 +18,7 @@ time.sleep(1)
 os.system('unzip -o world.zip')
 time.sleep(5)
 print("**script**: starting server")
-os.system('nohup java -Xmx800M -jar server.jar > nohup.out &')
+os.system('nohup java -Xmx400M -jar server.jar > nohup.out &')
 
 while True:
     time.sleep(10)
